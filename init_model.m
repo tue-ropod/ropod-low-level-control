@@ -88,8 +88,8 @@ load q_Traj
 Tslot = (size(V_glb,1)-1)*Ts;
 Tinit = 1*Tslot; %The duration of the initialization is same as that of one period of the ID signal, to avoid switchiong to an abrupt reference.
 
-qrefdot_sys_ID_num_sing = 1*[V_glb(:,1) 1*V_glb(:,2) 1*W_glb_rz ];
-qrefdot_num = repmat(qrefdot_sys_ID_num_sing,[1 1]);
+qrefdot_sys_ID_num_sing = 3*[V_glb(:,1) 0*V_glb(:,2) 0*W_glb_rz ];
+qrefdot_num = repmat(qrefdot_sys_ID_num_sing,[2 1]);
 timesim = (0:1:size(qrefdot_num,1)-1).'*Ts;
 qrefdot = [timesim qrefdot_num];
 Tfinal = timesim(end);
