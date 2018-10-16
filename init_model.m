@@ -81,12 +81,13 @@ LPF_fhz_dvarphi_meas = 50;
 LPF_fhz_ddelta_meas = 50;
 
 %% SysID signal
-load q_Traj
-% load experimental_data/Leuven_experiment_oct_9_2018/qtest_traj_1m50cm
+% load q_Traj
+load experimental_data/Leuven_experiment_oct_9_2018/qtest_traj_1m50cm
 
 
 Tslot = (size(V_glb,1)-1)*Ts;
 Tinit = 1*Tslot; %The duration of the initialization is same as that of one period of the ID signal, to avoid switchiong to an abrupt reference.
+Tinit = 10;
 
 qrefdot_sys_ID_num_sing = 1*[V_glb(:,1) 1*V_glb(:,2) 1*W_glb_rz ];
 qrefdot_num = repmat(qrefdot_sys_ID_num_sing,[1 1]);
