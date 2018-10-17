@@ -71,11 +71,11 @@ FFtheta_intia = 0;
 %% Wheel Vel controller
 % No integrators at the wheel velocity level!;
 
-K_gain_dvarphi_cntr = 0.05;
-I_fhz_dvarphi_cntr = 0;
-LL_wz_fhz_dvarphi_cntr = 2; % Use the same value for not having the LL
-LL_wp_fhz_dvarphi_cntr = 10;
-LPF_fhz_dvarphi_cntr = 50;
+K_gain_ddelta_cntr = 0.2;
+I_fhz_ddelta_cntr = 0;
+LL_wz_fhz_ddelta_cntr = 2; % Use the same value for not having the LL
+LL_wp_fhz_ddelta_cntr = 10;
+LPF_fhz_ddelta_cntr = 50;
 
 LPF_fhz_dvarphi_meas = 50;
 LPF_fhz_ddelta_meas = 50;
