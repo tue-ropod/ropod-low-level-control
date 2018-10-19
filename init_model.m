@@ -73,9 +73,9 @@ FFtheta_intia = 0;
 
 K_gain_ddelta_cntr = 0.2;
 I_fhz_ddelta_cntr = 0;
-LL_wz_fhz_ddelta_cntr = 10; % Use the same value for not having the LL
+LL_wz_fhz_ddelta_cntr = 2; % Use the same value for not having the LL
 LL_wp_fhz_ddelta_cntr = 10;
-LPF_fhz_ddelta_cntr = 50;
+LPF_fhz_ddelta_cntr = 10;
 
 LPF_fhz_dvarphi_meas = 50;
 LPF_fhz_ddelta_meas = 50;
@@ -88,7 +88,7 @@ load q_Traj
 Tslot = (size(V_glb,1)-1)*Ts;
 Tinit = 0*Tslot; %The duration of the initialization is same as that of one period of the ID signal, to avoid switchiong to an abrupt reference.
 
-qrefdot_sys_ID_num_sing = 2*[V_glb(:,1) 0*V_glb(:,2) 0*W_glb_rz ];
+qrefdot_sys_ID_num_sing = 3.5*[V_glb(:,1) 0*V_glb(:,2) 0*W_glb_rz ];
 qrefdot_num = repmat(qrefdot_sys_ID_num_sing,[2 1]);
 timesim = (0:1:size(qrefdot_num,1)-1).'*Ts;
 qrefdot = [timesim qrefdot_num];
