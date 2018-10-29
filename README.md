@@ -63,19 +63,19 @@ Frequency of the zero for a lead-lag control action of the translational velocit
 * **&#x223C;<name\>/platform_dxdy_cntr/LL_wp_fhz (double, default: 20)**\
 Frequency of the pole for a lead-lag control action of the translational velocity controller.
 * **&#x223C;<name\>/platform_dxdy_cntr/LPF_fhz (double, default: 100)**\
-Frequency for a first order low-pass-filer of the translational velocity controller.
+Frequency for a first order low-pass-filter of the translational velocity controller.
 
 #### 2.2.2.2 Outer loop rotational platform angular velocity controllers
 * **&#x223C;<name\>/platform_dtheta_cntr/Kgain (double, default: 150)**\
-Proportional gain for angular velocity controller.
+Proportional gain for the platform angular velocity controller.
 * **&#x223C;<name\>/platform_dtheta_cntr/I_fhz (double, default: 0.3)**\
-Weak integrator frequency for angular velocity controller.
+Weak integrator frequency for the platform angular angular velocity controller.
 * **&#x223C;<name\>/platform_dtheta_cntr/LL_wz_fhz (double, default: 20)**\
-Frequency of the zero for a lead-lag control action of the angular velocity controller.
+Frequency of the zero for a lead-lag control action of the platform angular velocity controller.
 * **&#x223C;<name\>/platform_dtheta_cntr/LL_wp_fhz (double, default: 20)**\
-Frequency of the pole for a lead-lag control action of the angular velocity controller.
+Frequency of the pole for a lead-lag control action of the platform angular velocity controller.
 * **&#x223C;<name\>/platform_dtheta_cntr/LPF_fhz (double, default: 100)**\
-Frequency for a first order low-pass-filer of the angular velocity controller.
+Frequency for a first order low-pass-filter of the platform angular velocity controller.
 
 #### 2.2.2.3 Inner loop wheel angular velocity controllers
 * **&#x223C;<name\>/platform_dvarphi_cntr/Kgain (double, default: 0.05)**\
@@ -87,4 +87,4 @@ Frequency of the zero for a lead-lag control action of the wheel angular velocit
 * **&#x223C;<name\>/platform_dvarphi_cntr/LL_wp_fhz (double, default: 10)**\
 Frequency of the pole for a lead-lag control action of the wheel angular velocity controller.
 * **&#x223C;<name\>/platform_dvarphi_cntr/LPF_fhz (double, default: 50)**\
-Frequency for a first order low-pass-filer of the angular velocity controller.
+Frequency for a first order low-pass-filter of the angular velocity controller.
