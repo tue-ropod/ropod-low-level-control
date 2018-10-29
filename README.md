@@ -52,3 +52,27 @@ Maximum platform rotational velocity in radians per second.
 * **&#x223C;<name\>/base_conf/max_acc_theta (double, default: 1.6)**\
 Maximum platform rotational acceleration in radians per second square.
 
+#### 2.2.2 Controller configuration
+#### 2.2.2.1 Outer loop translational platform velocity controllers
+* **&#x223C;<name\>/platform_dxdy_cntr/Kgain (double, default: 200)**\
+Proportional gain for translational velocity controller.
+* **&#x223C;<name\>/platform_dxdy_cntr/I_fhz (double, default: 0.25)**\
+Weak integrator frequency for translational velocity controller.
+* **&#x223C;<name\>/platform_dxdy_cntr/LL_wz_fhz (double, default: 20)**\
+Frequency of the zero for a lead-lag control action of the translational velocity controller.
+* **&#x223C;<name\>/platform_dxdy_cntr/LL_wp_fhz (double, default: 20)**\
+Frequency of the pole for a lead-lag control action of the translational velocity controller.
+* **&#x223C;<name\>/platform_dxdy_cntr/LPF_fhz (double, default: 100)**\
+Frequency for a first order low-pass-filer of the translational velocity controller.
+
+#### 2.2.2.2 Outer loop rotational platform angular velocity controllers
+* **&#x223C;<name\>/platform_dtheta_cntr/Kgain (double, default: 150)**\
+Proportional gain for angular velocity controller.
+* **&#x223C;<name\>/platform_dtheta_cntr/I_fhz (double, default: 0.3)**\
+Weak integrator frequency for angular velocity controller.
+* **&#x223C;<name\>/platform_dtheta_cntr/LL_wz_fhz (double, default: 20)**\
+Frequency of the zero for a lead-lag control action of the angular velocity controller.
+* **&#x223C;<name\>/platform_dtheta_cntr/LL_wp_fhz (double, default: 20)**\
+Frequency of the pole for a lead-lag control action of the angular velocity controller.
+* **&#x223C;<name\>/platform_dtheta_cntr/LPF_fhz (double, default: 100)**\
+Frequency for a first order low-pass-filer of the angular velocity controller.
