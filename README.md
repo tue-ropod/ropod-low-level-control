@@ -20,16 +20,35 @@ Robot's odometry
 Velocity commands to be executed by the robot
 
 ### 2.2 Parameters
-#### 2.2.1 Robot kinematics
+#### 2.2.1 Robot and smart-wheel kinematics
 * **&#x223C;<name\>/base_kin_model/r_wL_SW1 (double, default: 0.05)**\
-Radius of left wheel of Smart-Wheel 1. Use similar parameter for other smart-wheels up to 4.
+Radius in meters of left wheel of Smart-Wheel 1. Use similar parameter for other smart-wheels up to 4.
 * **&#x223C;<name\>/base_kin_model/r_wR_SW1 (double, default: 0.05)**\
-Radius of right wheel of Smart-Wheel 1. Use similar parameter for other smart-wheels up to 4.
+Radius in meters of right wheel of Smart-Wheel 1. Use similar parameter for other smart-wheels up to 4.
 * **&#x223C;<name\>/base_kin_model/s_w (double, default: 0.001)**\
-Swivel caster off-set of smartwheels. 
+Swivel caster off-set in meters of smartwheels. 
 * **&#x223C;<name\>/base_kin_model/d_w (double, default: 0.08)**\
-Separation between wheels of a smartwheel.
+Separation in meters between wheels of a smartwheel.
 * **&#x223C;<name\>/base_kin_model/xpos_SW1 (double, default: 0.21)**\
-x position of smart wheel 1 pivot with respect to the platform center of rotation. Use similar parameter for other smart-wheels up to 4.
+x position in meters of smart wheel 1 pivot with respect to the platform center of rotation. Use similar parameter for other smart-wheels up to 4.
 * **&#x223C;<name\>/base_kin_model/ypos_SW1 (double, default: 0.21)**\
-y position of smart wheel 1 pivot with respect to the platform center of rotation. Use similar parameter for other smart-wheels up to 4.
+y position in meters of smart wheel 1 pivot with respect to the platform center of rotation. Use similar parameter for other smart-wheels up to 4.
+
+#### 2.2.2 Smart-wheels configuration
+* **&#x223C;<name\>/smart_wheels/enable (double, default: 1.0)**\
+Enable smart-wheels. 
+* **&#x223C;<name\>/smart_wheels/max_current (double, default: 10.0)**\
+Maximum current in amperes per smart-wheel. Used by the outer control loop saturation.
+* **&#x223C;<name\>/smart_wheels/pivot_offs_sw1 (double, default: 0.0)**\
+Pivot offset in radians to calibrate zero pivot angular position of Smart-wheel 1. Use similar parameter for other smart-wheels up to 4.
+
+#### 2.2.2 Platform configuration
+* **&#x223C;<name\>/base_conf/max_vel_xy (double, default: 2.0)**\
+Maximum platform translational velocity in meters per second.
+* **&#x223C;<name\>/base_conf/max_acc_xy (double, default: 2.0)**\
+Maximum platform translational acceleration in meters per second square.
+* **&#x223C;<name\>/base_conf/max_vel_theta (double, default: 1.6)**\
+Maximum platform rotational velocity in radians per second.
+* **&#x223C;<name\>/base_conf/max_acc_theta (double, default: 1.6)**\
+Maximum platform rotational acceleration in radians per second square.
+
