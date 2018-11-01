@@ -26,10 +26,10 @@ Taucompfactor = 2.0; % Compensation factor for wheels 3-4
 %% Ropod max limits
 
 % This limits should be compatible with ID signal
-max_ropod_vel_xy     =  2.0; % [m/s]
-max_ropod_acc_xy     =  2.0; % [m/s^2]
+max_ropod_vel_xy     =  5.0; % [m/s]
+max_ropod_acc_xy     =  10.5; % [m/s^2]
 max_ropod_vel_theta  =  1.6; % [rad/s]
-max_ropod_acc_theta  =  1.6; % [rad/s^2]
+max_ropod_acc_theta  =  2.0; % [rad/s^2]
 max_ropod_sw_force   =  500; % [N]
 max_ropod_sw_tau     =  250; % [Nm]
 
@@ -75,7 +75,7 @@ K_gain_dvarphi_cntr = 0.05;
 I_fhz_dvarphi_cntr = 0;
 LL_wz_fhz_dvarphi_cntr = 2; % Use the same value for not having the LL
 LL_wp_fhz_dvarphi_cntr = 10;
-LPF_fhz_dvarphi_cntr = 50;
+LPF_fhz_dvarphi_cntr = 40;
 
 LPF_fhz_dvarphi_meas = 50;
 LPF_fhz_ddelta_meas = 50;
@@ -88,8 +88,8 @@ load q_Traj
 Tslot = (size(V_glb,1)-1)*Ts;
 Tinit = 0*Tslot; %The duration of the initialization is same as that of one period of the ID signal, to avoid switchiong to an abrupt reference.
 
-qrefdot_sys_ID_num_sing = 1*[V_glb(:,1) 0*V_glb(:,2) 1*W_glb_rz ];
-qrefdot_num = repmat(qrefdot_sys_ID_num_sing,[2 1]);
+qrefdot_sys_ID_num_sing = [1 1 1].*[V_glb(:,1) V_glb(:,2) W_glb_rz ];
+qrefdot_num = repmat(qrefdot_sys_ID_num_sing,[1 1]);
 timesim = (0:1:size(qrefdot_num,1)-1).'*Ts;
 qrefdot = [timesim qrefdot_num];
 Tfinal = timesim(end);
