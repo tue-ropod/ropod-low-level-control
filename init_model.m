@@ -20,8 +20,7 @@ max_sw_current  =  15; % [A]
 sw_tau_2_curr = 1/motor_physical_parameters.torqueconstant.value;
 max_sw_tau      = max_sw_current/sw_tau_2_curr;
 max_hw_tau      = 7.0;
-pivot_offs_sws  = [3.835 3.465 2.059 0.357]; % Vector with pivot offsets
-Taucompfactor = 2.0; % Compensation factor for wheels 3-4
+pivot_offs_sws  = 0*[3.835 3.465 2.059 0.357]; % Vector with pivot offsets
 
 %% Ropod max limits
 
@@ -53,14 +52,14 @@ dxr_cntr = tf(0,1,Ts); %shapeit_data.C_tf_z;
 dyr_cntr = tf(0,1,Ts); %shapeit_data.C_tf_z;
 dthetar_cntr = tf(0,1,Ts); %shapeit_data.C_tf_z;
 
-K_gain_dxdy_cntr = 200;
+K_gain_dxdy_cntr = 150; % 200
 I_fhz_dxdy_cntr = 0.25;
 LL_wz_fhz_dxdy_cntr = 20; % Use the same value for not having the LL
 LL_wp_fhz_dxdy_cntr = 20;
 LPF_fhz_dxdy_cntr = 100;
 FFxy_mass = 0*80;
 
-K_gain_dtheta_cntr = 150;
+K_gain_dtheta_cntr = 100; % 150
 I_fhz_dtheta_cntr = 0.3;
 LL_wz_fhz_dtheta_cntr = 20; % Use the same value for not having the LL
 LL_wp_fhz_dtheta_cntr = 20;
@@ -71,9 +70,9 @@ FFtheta_intia = 0;
 %% Wheel Vel controller
 % No integrators at the wheel velocity level!;
 
-K_gain_dvarphi_cntr = 0.05;
+K_gain_dvarphi_cntr = 0.03; % 0.05
 I_fhz_dvarphi_cntr = 0;
-LL_wz_fhz_dvarphi_cntr = 2; % Use the same value for not having the LL
+LL_wz_fhz_dvarphi_cntr = 5;%2 % Use the same value for not having the LL
 LL_wp_fhz_dvarphi_cntr = 10;
 LPF_fhz_dvarphi_cntr = 40;
 
@@ -86,7 +85,7 @@ load q_Traj
 
 
 Tslot = (size(V_glb,1)-1)*Ts;
-Tinit = 0*Tslot; %The duration of the initialization is same as that of one period of the ID signal, to avoid switchiong to an abrupt reference.
+Tinit = 1*Tslot; %The duration of the initialization is same as that of one period of the ID signal, to avoid switchiong to an abrupt reference.
 
 qrefdot_sys_ID_num_sing = [1 1 1].*[V_glb(:,1) V_glb(:,2) W_glb_rz ];
 qrefdot_num = repmat(qrefdot_sys_ID_num_sing,[1 1]);
