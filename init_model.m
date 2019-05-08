@@ -21,7 +21,7 @@ sw_tau_2_curr = 1/motor_physical_parameters.torqueconstant.value;
 max_sw_tau      = max_sw_current/sw_tau_2_curr;
 max_hw_tau      = 7.0;
 pivot_offs_sws  = [3.835 3.465 2.059 0.357]; % Vector with pivot offsets
-Taucompfactor = 2.0; % Compensation factor for wheels 3-4
+
 
 %% Ropod max limits
 
@@ -88,7 +88,7 @@ load q_Traj
 
 
 Tslot = (size(V_glb,1)-1)*Ts;
-Tinit = 0*Tslot; %The duration of the initialization is same as that of one period of the ID signal, to avoid switchiong to an abrupt reference.
+% Tinit = 0*Tslot; %The duration of the initialization is same as that of one period of the ID signal, to avoid switchiong to an abrupt reference.
 
 qrefdot_sys_ID_num_sing = 1*[V_glb(:,1) 1*V_glb(:,2) 1*W_glb_rz ];
 qrefdot_num = repmat(qrefdot_sys_ID_num_sing,[3 1]);
