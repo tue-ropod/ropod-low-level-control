@@ -8,7 +8,7 @@ K = eye(2*Nwheels);
 for idx = 1:Nwheels
     if ena_w(idx) == 0
         K(2*(idx-1)+1,2*(idx-1)+1) = 1000; % 1000 when wheel is defect
-        K(2*(idx-2)+1,2*(idx-1)+2) = 1000;
+        K(2*(idx-1)+2,2*(idx-1)+2) = 1000;
     end
 end
 
@@ -41,7 +41,7 @@ Linv( 2*Nwheels+1 , 2*Nwheels+1 ) = 1;
 x = zeros(2*Nwheels+1,1);
 x = mpcqpsolver(Linv, f, A, b, Aeq, beq, false(2*(2*Nwheels+1),1), mpcqpsolverOptions());
 Ttaud = x(1:2*Nwheels);
-taubody_sc = x(2*Nwheels+1);
+taubody_sc = 1.0-x(2*Nwheels+1);
 
 end
 
